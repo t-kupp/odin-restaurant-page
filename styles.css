@@ -29,7 +29,7 @@ body {
   width: 100vw;
   font-family: "HyliaSerif", sans-serif;
   color: white;
-  background-image: url(/img/background2.jpg);
+  background-image: url(./img/background.jpg);
   backdrop-filter: blur(3px);
   background-size: cover;
 }

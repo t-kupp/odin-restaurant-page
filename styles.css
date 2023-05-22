@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Triforce;
+  src: url(fonts/Triforce.ttf);
+}
+@font-face {
+  font-family: HyliaSerif;
+  src: url(fonts/HyliaSerifBeta-Regular.otf);
+}
+@font-face {
+  font-family: TWBOZ;
+  src: url(fonts/The-wild-breath-of-zelda.otf);
+}
+
+:root {
+  --white: #ffffff;
+  --gold: #b99f65;
+  --black: #000000;
+  --dark-red: #170606;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "HyliaSerif", sans-serif;
+  color: white;
+  background-image: url(/img/background2.jpg);
+  backdrop-filter: blur(3px);
+  background-size: cover;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+header:before,
+header:after {
+  height: 2px;
+  display: block;
+  content: "";
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(185, 159, 101, 1) 35%,
+    rgba(185, 159, 101, 1) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+nav {
+  padding: 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 500px;
+}
+
+.nav-link {
+    color: var(--gold);
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--white);
+}
+
+#content {
+  width: 85vw;
+  max-width: 800px;
+  height: 80vh;
+  max-height: 800px;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nameplate {
+  text-shadow: 1px 1px 2px var(--gold);
+  text-align: center;
+  font-family: "Triforce";
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+#promo-image {
+  width: 90%;
+  max-width: 600px;
+  border: 2px solid var(--gold);
+}
+
+#description {
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+/* Start Copyright Section  */
+
+#copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  font-size: 12px;
+  font-family: Poppins;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+#copyright-link {
+  color: inherit;
+  text-decoration: none;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#source-link {
+  color: inherit;
+  margin-left: 5px;
+}
+
+#source-link:hover {
+  color: white;
+}
+
+#github-icon {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#github-icon:hover {
+  color: white;
+  transform: scale(1.1);
+}

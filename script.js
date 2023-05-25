@@ -55,7 +55,7 @@ contactBtn.addEventListener("click", () => {
 });
 
 // Draw the Home page on page load
-drawHome()
+drawHome();
 
 // Draw the Home page
 function drawHome() {

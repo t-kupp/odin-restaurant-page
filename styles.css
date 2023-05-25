@@ -8,6 +8,16 @@
   src: url(fonts/HyliaSerifBeta-Regular.otf);
 }
 
+@font-face {
+  font-family: rodin-m;
+  src: url(fonts/rodin-pro-m.otf);
+}
+
+@font-face {
+  font-family: rodin-db;
+  src: url(fonts/rodin-pro-db.otf);
+}
+
 :root {
   --white: #ffffff;
   --gold: #b99f65;
@@ -84,17 +94,17 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
 }
 
 /* Home section  */
 
-#nameplate {
+.nameplate {
   text-shadow: 1px 1px 2px var(--gold);
   text-align: center;
   font-family: "Triforce";
   font-size: 3rem;
   letter-spacing: 2px;
+  margin-bottom: 30px;
 }
 
 #promo-image-container {
@@ -105,16 +115,74 @@ nav {
 
 #promo-main {
   display: block;
-  width: 90%;
-  max-width: 600px;
+  width: 80%;
+  max-width: 500px;
   border: 2px solid var(--gold);
+  margin: 20px 0;
 }
 
 #description {
-  font-size: 1.1rem;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
   letter-spacing: 0.3px;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+/* Menu Section  */
+
+.menu-item-wrapper {
+  max-height: 100px;
+  font-style: italic;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  line-height: clamp(0.7rem, 1.5vw, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid rgba(0, 0, 0, 0.6);
+  margin: 10px 0;
+}
+
+.menu-item-wrapper:hover {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px var(--gold);
+}
+
+.image-and-desc-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.food-icon {
+  margin-right: 20px;
+  width: clamp(3rem, 5.5vw, 6rem);
+  height: clamp(3rem, 5.5vw, 6rem);
+  object-fit: contain;
+}
+
+.item-name {
+  margin-bottom: 15px;
+  font-family: "rodin-db";
+}
+
+.item-desc {
+  max-width: 400px;
+  font-family: "rodin-m";
+}
+
+.price-wrapper {
+  font-family: "rodin-m";
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.rupee {
+  height: calc(clamp(0.7rem, 1.5vw, 1rem) * 1.5);
+  margin-right: 5px;
 }
 
 /* Start Copyright Section  */

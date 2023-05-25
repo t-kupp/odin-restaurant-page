@@ -2,13 +2,10 @@
   font-family: Triforce;
   src: url(fonts/Triforce.ttf);
 }
+
 @font-face {
   font-family: HyliaSerif;
   src: url(fonts/HyliaSerifBeta-Regular.otf);
-}
-@font-face {
-  font-family: TWBOZ;
-  src: url(fonts/The-wild-breath-of-zelda.otf);
 }
 
 :root {
@@ -33,6 +30,8 @@ body {
   backdrop-filter: blur(3px);
   background-size: cover;
 }
+
+/* Header and Nav  */
 
 header {
   background-color: rgba(0, 0, 0, 0.8);
@@ -61,7 +60,7 @@ nav {
 }
 
 .nav-link {
-    color: var(--gold);
+  color: var(--gold);
   margin: 0 20px;
   cursor: pointer;
 }
@@ -69,6 +68,8 @@ nav {
 .nav-link:hover {
   color: var(--white);
 }
+
+/* Body content wrapper  */
 
 #content {
   width: 85vw;
@@ -86,6 +87,8 @@ nav {
   justify-content: space-between;
 }
 
+/* Home section  */
+
 #nameplate {
   text-shadow: 1px 1px 2px var(--gold);
   text-align: center;
@@ -94,15 +97,24 @@ nav {
   letter-spacing: 2px;
 }
 
-#promo-image {
+#promo-image-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+#promo-main {
+  display: block;
   width: 90%;
   max-width: 600px;
   border: 2px solid var(--gold);
 }
 
 #description {
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
   text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
 /* Start Copyright Section  */

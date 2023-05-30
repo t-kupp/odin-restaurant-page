@@ -37,6 +37,13 @@ const menu = {
   ],
 };
 
+const contact = {
+  h1: { class: "nameplate", text: "Contact" },
+  img: { id: "location-img", src: "./img/misc/location.jpg", alt: "A map of the location." },
+  p: { monToFri: "Monday to Friday:", sat: "Saturday:", sun: "Sunday:" },
+  li: { monToFri: "12:00 PM to 10:00 PM", sat: "10:00 AM to 11:00 PM", sun: "11:00 AM to 9:00 PM" },
+};
+
 // Functionality for clicking the nav buttons
 const homeBtn = document.querySelector("#home-btn");
 const menuBtn = document.querySelector("#menu-btn");
@@ -65,12 +72,15 @@ function drawHome() {
   nameplate.className = home.h1.class;
   nameplate.textContent = home.h1.text;
 
-  const promoImage = content.appendChild(document.createElement("img"));
+  const homeWrapper = content.appendChild(document.createElement("div"));
+  homeWrapper.id = "home-wrapper";
+
+  const promoImage = homeWrapper.appendChild(document.createElement("img"));
   promoImage.id = home.img.id;
   promoImage.src = home.img.src;
   promoImage.alt = home.img.alt;
 
-  const description = content.appendChild(document.createElement("p"));
+  const description = homeWrapper.appendChild(document.createElement("p"));
   description.id = home.p.id;
   description.textContent = home.p.text;
 }
@@ -79,11 +89,11 @@ function drawHome() {
 function drawMenu() {
   content.innerHTML = "";
 
-  let namePlate = content.appendChild(document.createElement("h1"));
+  const namePlate = content.appendChild(document.createElement("h1"));
   namePlate.className = menu.h1.class;
   namePlate.textContent = menu.h1.text;
 
-  let menuWrapper = content.appendChild(document.createElement("div"));
+  const menuWrapper = content.appendChild(document.createElement("div"));
   menuWrapper.id = "menu-wrapper";
 
   for (let i = 0; i < menu.menuItems.length; i++) {
@@ -93,37 +103,71 @@ function drawMenu() {
 
 // Draw the individual menu items
 function drawMenuItems(i) {
-  let menuWrapper = document.querySelector("#menu-wrapper");
+  const menuWrapper = document.querySelector("#menu-wrapper");
 
-  let menuItemWrapper = menuWrapper.appendChild(document.createElement("div"));
+  const menuItemWrapper = menuWrapper.appendChild(document.createElement("div"));
   menuItemWrapper.className = "menu-item-wrapper";
 
-  let imageAndDescWrapper = menuItemWrapper.appendChild(document.createElement("div"));
+  const imageAndDescWrapper = menuItemWrapper.appendChild(document.createElement("div"));
   imageAndDescWrapper.className = "image-and-desc-wrapper";
 
-  let menuIcon = imageAndDescWrapper.appendChild(document.createElement("img"));
+  const menuIcon = imageAndDescWrapper.appendChild(document.createElement("img"));
   menuIcon.className = "food-icon";
   menuIcon.src = menu.menuItems[i].img.src;
   menuIcon.alt = menu.menuItems[i].img.alt;
 
-  let itemDescWrapper = imageAndDescWrapper.appendChild(document.createElement("div"));
+  const itemDescWrapper = imageAndDescWrapper.appendChild(document.createElement("div"));
 
-  let itemName = itemDescWrapper.appendChild(document.createElement("h3"));
+  const itemName = itemDescWrapper.appendChild(document.createElement("h3"));
   itemName.className = "item-name";
   itemName.textContent = menu.menuItems[i].name;
 
-  let itemDesc = itemDescWrapper.appendChild(document.createElement("p"));
+  const itemDesc = itemDescWrapper.appendChild(document.createElement("p"));
   itemDesc.className = "item-desc";
   itemDesc.textContent = menu.menuItems[i].desc;
 
-  let priceWrapper = menuItemWrapper.appendChild(document.createElement("div"));
+  const priceWrapper = menuItemWrapper.appendChild(document.createElement("div"));
   priceWrapper.className = "price-wrapper";
 
-  let rupeeIcon = priceWrapper.appendChild(document.createElement("img"));
+  const rupeeIcon = priceWrapper.appendChild(document.createElement("img"));
   rupeeIcon.className = "rupee";
   rupeeIcon.src = "./img/misc/rupee.png";
   rupeeIcon.alt = "Rupees.";
 
-  let price = priceWrapper.appendChild(document.createElement("p"));
+  const price = priceWrapper.appendChild(document.createElement("p"));
   price.textContent = menu.menuItems[i].price;
+}
+
+// Draw the Contact page
+function drawContact() {
+  content.innerHTML = "";
+
+  const nameplate = content.appendChild(document.createElement("h1"));
+  nameplate.classList = contact.h1.class;
+  nameplate.textContent = contact.h1.text;
+
+  const openingHoursWrapper = content.appendChild(document.createElement("div"));
+  openingHoursWrapper.id = "opening-hours";
+
+  const locationImage = openingHoursWrapper.appendChild(document.createElement("img"));
+  locationImage.id = contact.img.id;
+  locationImage.src = contact.img.src;
+  locationImage.alt = contact.img.alt;
+
+  const hoursList = openingHoursWrapper.appendChild(document.createElement("ul"));
+
+  const p1 = hoursList.appendChild(document.createElement("p"));
+  p1.textContent = contact.p.monToFri;
+  const li1 = hoursList.appendChild(document.createElement("li"));
+  li1.textContent = contact.li.monToFri;
+
+  const p2 = hoursList.appendChild(document.createElement("p"));
+  p2.textContent = contact.p.sat;
+  const li2 = hoursList.appendChild(document.createElement("li"));
+  li2.textContent = contact.li.sat;
+
+  const p3 = hoursList.appendChild(document.createElement("p"));
+  p3.textContent = contact.p.sun;
+  const li3 = hoursList.appendChild(document.createElement("li"));
+  li3.textContent = contact.li.sun;
 }

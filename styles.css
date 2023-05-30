@@ -100,7 +100,7 @@ nav {
 /* Home section  */
 
 .nameplate {
-  text-shadow: 1px 1px 2px var(--gold);
+  text-shadow: 2px 2px 4px var(--gold);
   text-align: center;
   font-family: "Triforce";
   font-size: 3rem;
@@ -114,25 +114,31 @@ nav {
   position: relative;
 }
 
-#promo-main {
+#promo-main,
+#location-img {
   display: block;
   width: 80%;
   max-width: 500px;
   border: 2px solid var(--gold);
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
-#description {
+#home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "rodin-m";
   font-size: clamp(0.7rem, 1.5vw, 0.9rem);
   line-height: calc(clamp(0.7rem, 1.5vw, 0.9rem) * 1.2);
-  letter-spacing: 0.3px;
-  text-align: center;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  padding: 14px 8px;
+  padding: 16px;
   background-color: rgba(0, 0, 0, 0.6);
   border: 2px solid rgba(255, 255, 255, 0.5);
   outline: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+#description {
+  width: 100%;
+  max-width: 500px;
 }
 
 /* Menu Section  */
@@ -190,6 +196,36 @@ nav {
 .rupee {
   height: calc(clamp(0.7rem, 1.5vw, 0.9rem) * 1.5);
   margin-right: 5px;
+}
+
+/* Contact Section  */
+
+#opening-hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "rodin-m";
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+#opening-hours > h1 {
+  font-style: italic;
+}
+
+#opening-hours > ul {
+  list-style: none;
+}
+
+#opening-hours > ul > p {
+  text-decoration: underline;
+}
+
+#opening-hours > ul > li {
+  margin-left: 20px;
 }
 
 /* Start Copyright Section  */
